@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { LayoutList, LayoutTask } from "./TaskList.styled";
+import { LayoutTask } from "./TaskList.styled";
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteTask, toggleTask, editTask } from "redux/taskSlice";
 
@@ -36,7 +36,7 @@ export function TaskList() {
     };
 
     return (
-        <LayoutList>
+        <div>
             {filteredTasks.map(task => (
                 <div key={task.id}>
                     {editableTaskId === task.id ? (
@@ -63,6 +63,6 @@ export function TaskList() {
                     )}
                 </div>
             ))}
-        </LayoutList>
+        </div>
     );
 }
